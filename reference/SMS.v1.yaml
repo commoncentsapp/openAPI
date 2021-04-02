@@ -1,0 +1,36 @@
+openapi: 3.0.0
+info:
+  title: SMS
+  version: '1.0'
+  contact:
+    name: Matt Pelo
+    url: 'https://commoncents.io/support'
+    email: matt@commoncents.io
+  termsOfService: 'https://commoncents.io/terms-conditions'
+  description: 'The sms endpoint allows the user to send sms messages to an individual or group. '
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /sms:
+    post:
+      summary: Send an sms message to the user
+      tags:
+        - sms
+      responses: {}
+      operationId: post-sms
+      description: send an sms to a single person
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                toPhone:
+                  type: string
+                fromPhone:
+                  type: string
+                message:
+                  type: string
+        description: ''
+components:
+  schemas: {}
